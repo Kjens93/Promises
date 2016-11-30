@@ -1,7 +1,7 @@
 # Promises
 [![Build Status](https://travis-ci.org/Kjens93/promises-java.svg?branch=master)](https://travis-ci.org/Kjens93/promises-java)
 [![Coverage Status](https://coveralls.io/repos/github/Kjens93/promises-java/badge.svg?branch=master)](https://coveralls.io/github/Kjens93/promises-java?branch=master)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.kjens93.promises/promises/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.kjens93.promises/promises)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.kjens93.promises/promises.svg?maxAge=60)](https://maven-badges.herokuapp.com/maven-central/io.github.kjens93.promises/promises)
 
 A Java library for streaming future tasks.
 
