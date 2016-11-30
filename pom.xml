@@ -88,12 +88,6 @@
                 <version>2.7</version>
                 <configuration>
                     <check></check>
-                    <instrumentation>
-                        <includes>
-                            <include>**/*_UT.java</include>
-                            <include>**/*_IT.java</include>
-                        </includes>
-                    </instrumentation>
                     <format>xml</format>
                     <maxmem>256m</maxmem>
                     <!-- aggregated reports for multi-module projects -->
