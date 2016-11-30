@@ -8,7 +8,7 @@ addons:
     packages:
     - oracle-java8-installer
 after_success:
-  - mvn test cobertura:cobertura coveralls:report
+  - mvn clean cobertura:cobertura coveralls:report
 env:
   global:
     secure: Wx78cLMRBmmHOFe1yPYmriTOyOyMRF0gQPuBqscNAnvDgFA9iAiR1yV1aK6/RuhyS2fosC1S2pmUHdxhNspvgE6ej7GpPNhvkNcAbN0+i+UklBK4YuJz7lTdRAlh8WhQ1GF+/mBWGG0E4Sq9Wa24YBH3Cb4141xUAmNUSVEqdOn2g2X+OZSEh5QCKGOw60qO4Jx/3rl83OLHd1KlU/sR3KjgOnRCNEDfWKUHJHhzr5Ivut9EPK9e08D1dL9XLaQKFnL8gmAZPhgArm2Sk1pZf40Ae7j6xIO3+pIx3iWk3YCGRWeSTk5TxgjEhIsf8JyN4dBnFGe36GtCwPOeHnlfnvWGXVSlVRssqrp6ngZnwgu+M9cbKpBxSVVFrzE4uxypp13fqVLUGpNdpjwHpv9TQvRo0KQnn8nYy1sCFoUa3LHDdXnazA6Q07I8uXE8I0oclSJc1bG+u1J2zfNHEtR45V0RqVkfcW8K53P1fFp7xfkKlbgoXrGW/BLOX9Ag/AvcKHl53CDozqQe/jGv1pTTF4sfK3sTDHM8UgLBDd0/ZZt5mm+r6v1g/9uKk1vdhwfgvudOfi4pqmEIqQ9SttF0Kp4uo4cr1W3pw/CoUo9HgwZLi55MHBl/7N/funa+8IOb5LOLucVdkew7k3voKId+YiWZQAul62e+kgY+tfAuEM0=
