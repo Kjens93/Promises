@@ -118,6 +118,15 @@ public interface Promise<T> extends Commitment {
         };
     }
 
+    default Promise<T> andThen(final Consumer<T> consumer) {
+        verifyNotNull(consumer);
+        return () -> {
+            T result = get();
+            consumer.accept(result);
+            return result;
+        };
+    }
+
     @Override
     default void await() {
         get();
