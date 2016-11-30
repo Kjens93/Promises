@@ -35,7 +35,7 @@ public class Promise_IT {
             return true;
         };
 
-        p.fork();
+        p.async();
 
     }
 
@@ -45,7 +45,7 @@ public class Promise_IT {
         AtomicReference<Throwable> caught = new AtomicReference<>(null);
 
         Object result = Promise.throwException(IllegalStateException::new)
-                .fork(caught::set)
+                .async(caught::set)
                 .get();
 
         assertThat(caught.get())
@@ -60,7 +60,7 @@ public class Promise_IT {
     public void test_fork_null_exception_handler() {
 
         Promise.throwException(IllegalStateException::new)
-                .fork(null)
+                .async(null)
                 .get();
 
     }

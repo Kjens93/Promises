@@ -33,12 +33,12 @@ public interface Promise<T> extends Commitment {
     }
 
     @Override
-    default Promise<T> fork() {
-        return fork(Throwable::printStackTrace);
+    default Promise<T> async() {
+        return async(Throwable::printStackTrace);
     }
 
     @Override
-    default Promise<T> fork(final Consumer<Throwable> uncaughtExceptionHandler) {
+    default Promise<T> async(final Consumer<Throwable> uncaughtExceptionHandler) {
         Future<T> future = threadPool.submit((Callable<T>) this::get);
         return () -> {
             try {

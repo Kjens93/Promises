@@ -17,16 +17,16 @@ public interface Commitment {
 
     void await();
 
-    default Commitment fork() {
-        return fork(Throwable::printStackTrace);
+    default Commitment async() {
+        return async(Throwable::printStackTrace);
     }
 
-    default Commitment fork(final Consumer<Throwable> uncaughtExceptionHandler) {
+    default Commitment async(final Consumer<Throwable> uncaughtExceptionHandler) {
         Promise<?> promise = () -> {
             this.await();
             return true;
         };
-        return promise.fork(uncaughtExceptionHandler);
+        return promise.async(uncaughtExceptionHandler);
     }
 
     default void await(long timeout, final TimeUnit unit) throws TimeoutException {

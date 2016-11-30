@@ -35,7 +35,7 @@ public class Commitment_UT {
             }
         };
 
-        c.fork();
+        c.async();
 
         synchronized (lock) {
             lock.wait();
@@ -49,7 +49,7 @@ public class Commitment_UT {
         AtomicReference<Throwable> caught = new AtomicReference<>(null);
 
         Commitment.throwException(IllegalStateException::new)
-                .fork(caught::set)
+                .async(caught::set)
                 .await();
 
         assertThat(caught.get())
@@ -62,7 +62,7 @@ public class Commitment_UT {
     public void test_fork_null_exception_handler() {
 
         Commitment.throwException(IllegalStateException::new)
-                .fork(null)
+                .async(null)
                 .await();
 
     }
