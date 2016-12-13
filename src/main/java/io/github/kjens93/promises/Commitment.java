@@ -18,7 +18,7 @@ public interface Commitment {
     void await();
 
     default Commitment async() {
-        return async(Throwable::printStackTrace);
+        return async(null);
     }
 
     default Commitment async(final Consumer<Throwable> uncaughtExceptionHandler) {

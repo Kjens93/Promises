@@ -59,9 +59,11 @@ public class Promise_IT {
     @Test(timeout = 500)
     public void test_fork_null_exception_handler() {
 
-        Promise.throwException(IllegalStateException::new)
-                .async(null)
-                .get();
+        assertThatThrownBy(() -> {
+            Promise.throwException(IllegalStateException::new)
+                    .async(null)
+                    .get();
+        }).isInstanceOf(IllegalStateException.class);
 
     }
 

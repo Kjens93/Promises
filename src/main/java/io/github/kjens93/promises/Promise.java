@@ -34,7 +34,7 @@ public interface Promise<T> extends Commitment {
 
     @Override
     default Promise<T> async() {
-        return async(Throwable::printStackTrace);
+        return async(null);
     }
 
     @Override
@@ -46,9 +46,13 @@ public interface Promise<T> extends Commitment {
             } catch(ExecutionException e) {
                 if(uncaughtExceptionHandler != null)
                     uncaughtExceptionHandler.accept(e.getCause());
+                else
+                    Throwables.propagate(e.getCause());
             } catch (Throwable t) {
                 if(uncaughtExceptionHandler != null)
                     uncaughtExceptionHandler.accept(t);
+                else
+                    Throwables.propagate(t);
             }
             return null;
         };

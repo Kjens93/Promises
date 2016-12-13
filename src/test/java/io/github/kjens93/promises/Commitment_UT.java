@@ -61,9 +61,11 @@ public class Commitment_UT {
     @Test(timeout = 500)
     public void test_fork_null_exception_handler() {
 
-        Commitment.throwException(IllegalStateException::new)
-                .async(null)
-                .await();
+        assertThatThrownBy(() -> {
+            Commitment.throwException(IllegalStateException::new)
+                    .async(null)
+                    .await();
+        }).isInstanceOf(IllegalStateException.class);
 
     }
 
